@@ -13,7 +13,7 @@ mobileLinks.forEach(link => {
 });
 
 function openWhatsApp(){
-  const number = "5516981205676"; // número pronto (DDI 55 + DDD 16 + número)
+  const number = "5516981057459"; // número pronto (DDI 55 + DDD 16 + número)
   const msg = encodeURIComponent("Olá! Quero um orçamento para restauração de rodas.");
   window.open(`https://wa.me/${number}?text=${msg}`,'_blank');
 }
@@ -241,7 +241,7 @@ form.addEventListener("submit", (e)=>{
   const notes = document.getElementById('observacoes').value.trim();
 
   // número da empresa (pegar dos contatos): +55 16 98120-5676 -> 5516981205676
-  const companyNumber = '5516981205676';
+  const companyNumber = '5516981057459';
 
   // Formata mensagem profissional, clara e persuasiva
   // Formata mensagem profissional, clara e persuasiva incluindo o serviço e pedindo orçamento
