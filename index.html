@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monster</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <header class="nav">
+    
+    <div class="brand">
+
+      <img class="logo" src="logo.png" alt="logo">
+
+      <h4>Monster</h4>
+
+
+    </div>
+    
+    <nav>
+      
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Agende sua visita</a>
+      <a href="#contato">Localização</a>
+      <a class="btn-primary" href="#agendar">Agendar</a>
+      
+    </nav>
+    
+    
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Restauração de rodas e estética automotiva premium</h2>
+      <p>Rodas riscadas? Pintura danificada? Polimento profissional? Aqui seu carro volta a brilhar como novo.</p>
+      <button class="btn-primary" onclick="scrollToEl('#agendar')">Agendar agora</button>
+      <button class="btn-outline" onclick="openWhatsApp()">Orçamento via WhatsApp</button>
+    </div>
+    <div class="hero-img"></div>
+  </section>
+
+  <section id="servicos" class="services">
+    <h3>Nossos Serviços</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Restauração de Rodas</h4>
+        <p>Correção de riscos, pintura e acabamento premium.</p>
+      </div>
+      <div class="card">
+        <h4>Polimento Técnico</h4>
+        <p>Correção de micro-riscos e realce de brilho.</p>
+      </div>
+      <div class="card">
+        <h4>Vitrificação</h4>
+        <p>Camada protetora com alta durabilidade.</p>
+      </div>
+      <div class="card">
+        <h4>Restauração de faróis</h4>
+        <p>melhorando a aparência e o desempenho do veículo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="gallery">
+    
+    <div class="grid">
+      <img src="rodas.jpg" />
+      <img src="caro.jpg" />
+      <img src="s10.jpg" />
+      <img src="farol.jpg" />
+      
+    </div>
+  </section>
+
+  <section id="agendar" class="booking">
+    <h3>Agende sua visita</h3>
+    <form id="bookingForm">
+      <input type="date" id="data" required />
+      <label for="hora" class="sr-only">Horário desejado</label>
+      <select id="hora" required title="Horário desejado">
+        <option value="">Selecione o horário</option>
+      </select>
+      <input type="text" id="nome" placeholder="Seu nome completo" required />
+
+      <label for="servico" class="sr-only">Serviço</label>
+      <select id="servico" required>
+        <option value="">Selecione o serviço desejado</option>
+        <option value="Restauração de Rodas">Restauração de Rodas</option>
+        <option value="Polimento Técnico">Polimento Técnico</option>
+        <option value="Vitrificação">Vitrificação</option>
+        <option value="Reforma de Rodas e Pintura">Reforma de Rodas e Pintura</option>
+        <option value="Outros">Outros (descrever nas observações)</option>
+      </select>
+
+      <input type="text" id="whatsapp" placeholder="WhatsApp (ex: 16 9xxxx-xxxx)" required />
+      <textarea id="observacoes" placeholder="Observações adicionais (opcional)" rows="3"></textarea>
+
+      <button class="btn-primary" type="submit">Confirmar</button>
+    </form>
+  </section>
+
+  <section id="contato" class="contact">
+    <h3>Localização</h3>
+    <div class="contact-content">
+      <div class="map">
+        <iframe title="Mapa da localização da Monster" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14872.83310032072!2d-48.49073412689045!3d-21.26322174177658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b946a65312d65f%3A0xa0dacff0756a7270!2sRua%20Florindo%20Cestari%2C%20260%20-%20Centro%2C%20Monte%20Alto%20-%20SP%2C%2015910-000!5e0!3m2!1spt-BR!2sbr!4v1764760755759!5m2!1spt-BR!2sbr" loading="lazy"></iframe>
+      </div>
+  
+    </div>
+  </section>
+
+  <footer>
+    
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Monster</h4>
+        <p>Somos especialistas em restauração de rodas</p>
+        
+        
+      </div>
+      <div class="footer-section">
+        <h4>Serviços</h4>
+       <p>Lavagem Detalhada</p>
+       <p>Polimento Técnico</p>
+       <p>Reforma de Rodas</p>
+       <p>Diamantação</p>
+       <p>Restauração de faróis</p>
+
+      </div>
+      <div class="footer-section">
+        <h4>Horário de funcionamento</h4>
+        
+        
+        <p> Segunda a Sexta-Feira:</p>
+        <p> 8:00 às 18:00</p>
+        <p>Sábado: 8:00 às 12:00</p>
+        <p>Domingo : Fechado</p>
+        
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        
+        
+        <p> 16 98120-5676</p>
+        <p> 16 98105-7459</p>
+        
+      </div>
+      <div class="footer-section">
+        <h4>Siga-nos</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/monsterrodas/"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new--v1.png" alt="Instagram"/></a>
+          <a href="https://www.facebook.com/monsterrodasrecuperadora"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"/></a>
+         
+        </div>
+        <button class="btn-primary">Faça uma cotação</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      
+      <p>© <span id="ano"></span> Monster — Refinamento Automotivo</p>
+      <p>Desenvolvido por <a href="https://github.com/rodrigonew01?tab=repositories">Rodrigo Rossi</a></p>
+    </div>
+  </footer>
+
+  <div class="social-fixed">
+    <a class="social-btn whatsapp-btn" href="https://wa.me/5516981205676" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp" />
+    </a>
+    <a class="social-btn instagram-btn" href="https://www.instagram.com/monsterrodas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
+    </a>
+    <a class="social-btn facebook-btn" href="https://www.facebook.com/monsterrodasrecuperadora" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" />
+    </a>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
