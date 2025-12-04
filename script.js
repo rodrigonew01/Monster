@@ -117,8 +117,9 @@ function generateTimeSlots(start, end, stepMinutes) {
   function toHM(mins) { const h = String(Math.floor(mins / 60)).padStart(2, '0'); const m = String(mins % 60).padStart(2, '0'); return `${h}:${m}`; }
   const s = toMinutes(start);
   const e = toMinutes(end);
-  // Gera slots de forma crescente. Exclui o horário final (e) para não incluir horário de fechamento.
-  for (let m = s; m < e; m += stepMinutes) {
+  // Gera slots de forma crescente. Inclui o horário final (e) se ele coincide com um passo.
+  for (let m = s; m <= e; m += stepMinutes) {
+    if (m > e) break;
     result.push(toHM(m));
   }
   // garante ordem crescente e sem duplicatas
@@ -180,9 +181,39 @@ updateTimeConstraintsForDate(dateInput.value);
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
 
-  // atualiza validações antes do envio
-  updateTimeConstraintsForDate(dateInput.value);
+  // validações sem repopular o select (evita perder seleção)
+  // verifica data
+  const selectedDate = dateInput.value;
+  if (!selectedDate) {
+    dateInput.reportValidity();
+    return;
+  }
 
+  // domingo não permitido (safety)
+  const selDay = new Date(selectedDate + 'T00:00:00').getDay();
+  if (selDay === 0) {
+    dateInput.setCustomValidity('A empresa fecha aos domingos. Escolha outro dia.');
+    dateInput.reportValidity();
+    return;
+  } else {
+    dateInput.setCustomValidity('');
+  }
+
+  // verifica horário selecionado está presente no select
+  const selectedTime = document.getElementById('hora').value;
+  if (!selectedTime) {
+    timeInput.setCustomValidity('Por favor selecione um horário disponível.');
+    timeInput.reportValidity();
+    return;
+  }
+  // garante que o option exista (proteção contra alterações externas)
+  if (!timeInput.querySelector(`option[value="${selectedTime}"]`)) {
+    showFormFeedback('Horário inválido. Selecione outro horário.');
+    return;
+  }
+  timeInput.setCustomValidity('');
+
+  // checa outros campos obrigatórios via API do navegador
   if (!form.checkValidity()) {
     form.reportValidity();
     return;

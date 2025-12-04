@@ -14,7 +14,7 @@
     
     <div class="brand">
 
-      <img class="logo" src="logo.png" alt="logo">
+      <img class="logo" src="logo.png" alt="logo" loading="lazy">
 
       <h4>Monster</h4>
 
@@ -68,10 +68,10 @@
   <section id="galeria" class="gallery">
     
     <div class="grid">
-      <img src="rodas.jpg" />
-      <img src="caro.jpg" />
-      <img src="s10.jpg" />
-      <img src="farol.jpg" />
+      <img src="rodas.jpg" loading="lazy" alt="Rodas restauradas" />
+      <img src="caro.jpg" loading="lazy" alt="Carro tratado" />
+      <img src="s10.jpg" loading="lazy" alt="S10 restaurada" />
+      <img src="farol.jpg" loading="lazy" alt="Farol restaurado" />
       
     </div>
   </section>
@@ -79,15 +79,15 @@
   <section id="agendar" class="booking">
     <h3>Agende sua visita</h3>
     <form id="bookingForm">
-      <input type="date" id="data" required />
+      <input type="date" id="data" required title="Data desejada" />
       <label for="hora" class="sr-only">Horário desejado</label>
-      <select id="hora" required title="Horário desejado">
+      <select id="hora" required title="Horário desejado" disabled>
         <option value="">Selecione o horário</option>
       </select>
-      <input type="text" id="nome" placeholder="Seu nome completo" required />
+      <input type="text" id="nome" placeholder="Seu nome completo" required title="Seu nome completo" />
 
       <label for="servico" class="sr-only">Serviço</label>
-      <select id="servico" required>
+      <select id="servico" required title="Serviço desejado">
         <option value="">Selecione o serviço desejado</option>
         <option value="Restauração de Rodas">Restauração de Rodas</option>
         <option value="Polimento Técnico">Polimento Técnico</option>
@@ -96,8 +96,8 @@
         <option value="Outros">Outros (descrever nas observações)</option>
       </select>
 
-      <input type="text" id="whatsapp" placeholder="WhatsApp (ex: 16 9xxxx-xxxx)" required />
-      <textarea id="observacoes" placeholder="Observações adicionais (opcional)" rows="3"></textarea>
+      <input type="text" id="whatsapp" placeholder="WhatsApp (ex: 16 9xxxx-xxxx)" required title="WhatsApp do cliente" />
+      <textarea id="observacoes" placeholder="Observações adicionais (opcional)" rows="3" title="Observações adicionais (opcional)"></textarea>
 
       <button class="btn-primary" type="submit">Confirmar</button>
     </form>
