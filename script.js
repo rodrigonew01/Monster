@@ -1,3 +1,17 @@
+const hamburgerMenu = document.getElementById('hamburger-menu');
+const mobileNav = document.getElementById('mobile-nav');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+hamburgerMenu.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+});
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+});
+
 function openWhatsApp(){
   const number = "5516981205676"; // número pronto (DDI 55 + DDD 16 + número)
   const msg = encodeURIComponent("Olá! Quero um orçamento para restauração de rodas.");

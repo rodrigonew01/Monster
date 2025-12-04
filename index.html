@@ -20,15 +20,25 @@
 
 
     </div>
+    <button class="hamburger" id="hamburger-menu" aria-label="Abrir menu de navegação">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     
-    <nav>
-      
+    <nav class="desktop-nav">
+
       <a href="#servicos">Serviços</a>
       <a href="#galeria">Agende sua visita</a>
       <a href="#contato">Localização</a>
-      <a class="btn-primary" href="#agendar">Agendar</a>
-      
+
     </nav>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#servicos" class="mobile-link">Serviços</a>
+      <a href="#galeria" class="mobile-link">Agende sua visita</a>
+      <a href="#contato" class="mobile-link">Localização</a>
+      <a href="#agendar" class="btn-primary mobile-link">Agendar</a>
+    </div>
     
     
   </header>
@@ -40,7 +50,9 @@
       <button class="btn-primary" onclick="scrollToEl('#agendar')">Agendar agora</button>
       <button class="btn-outline" onclick="openWhatsApp()">Orçamento via WhatsApp</button>
     </div>
-    <div class="hero-img"></div>
+    <div class="hero-img">
+      <img src="bmw.jpg" alt="Rodas restauradas" loading="lazy" />
+    </div>
   </section>
 
   <section id="servicos" class="services">
@@ -178,6 +190,6 @@
     </a>
   </div>
   
-  <script src="script.js"></script>
+  <script src="script.min.js"></script>
 </body>
 </html>
